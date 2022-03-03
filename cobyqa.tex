@@ -1,0 +1,86 @@
+%% cobyqa.tex
+%% Copyright 2022 Tom M. Ragonneau
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Tom M. Ragonneau.
+\documentclass[dvipsnames,10pt]{beamer}
+
+% Use the `metropolis' theme.
+\usetheme[progressbar=frametitle]{metropolis}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{frame numbering}{\insertframenumber\,/\,\inserttotalframenumber}
+\setbeamertemplate{bibliography item}[triangle]
+\metroset{block=fill}
+
+% Patch the "Overfull \vbox" warning from the theme.
+\def\titlepage{\usebeamertemplate{title page}}
+
+% Patch the "Token not allowed in a PDF string (Unicode): (hyperref)
+% removing `\translate'" warning from hyperred.
+\pdfstringdefDisableCommands{\def\translate#1{#1}}
+
+% Removing the extra-indentation of itemize/enumeration environments.
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+
+% Unnumbered appendices and references.
+\usepackage{appendixnumberbeamer}
+\usepackage[%
+    style=authoryear-comp,%
+    sorting=nyt,%
+    sortcites=false,%
+]{biblatex}
+\usepackage{hyperref}
+\renewcommand*{\bibnamedash}{\rule[.58ex]{3em}{.5pt}\space}
+\addbibresource{ragonneau-bib/strings.bib}
+\addbibresource{ragonneau-bib/optim.bib}
+
+% List of hyphenation exceptions for US English.
+% Source: https://ctan.org/tex-archive/info/digests/tugboat/hyphenex
+\input{ushyphex}
+
+\title{COBYQA}
+\subtitle{A derivative-free trust-region SQP method for nonlinearly-constrained optimization}
+\date{July 25, 2022 --- ICCOPT2022}
+\author{\href{https://ragonneau.co/}{Tom M. Ragonneau}}
+\institute{%
+    Department of Applied Mathematics\\%
+    The Hong Kong Polytechnic University\\%
+    Joint work with \href{https://www.zhangzk.net}{Zaikun Zhang}%
+}
+\hypersetup{%
+    pdfsubject={ICCOPT2022},%
+    pdfkeywords={DFO, derivative-free, optimization, COBYQA},%
+}
+
+\begin{document}
+
+    \maketitle
+
+    \begin{frame}
+        \frametitle{Table of contents}
+        \tableofcontents[hideallsubsections]
+    \end{frame}
+
+    \begin{frame}
+        \frametitle{Introduction}
+    \end{frame}
+
+    \appendix
+
+    \begin{frame}[t,allowframebreaks]
+        \frametitle{References}
+        \printbibliography[heading=none]
+    \end{frame}
+
+\end{document}
