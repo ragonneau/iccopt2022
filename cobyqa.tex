@@ -17,16 +17,13 @@
 % Use the `metropolis' theme.
 \usetheme[progressbar=frametitle]{metropolis}
 \usefonttheme{professionalfonts}
-\setbeamertemplate{section in toc}[sections numbered]
-\setbeamertemplate{frame numbering}{\insertframenumber\,/\,\inserttotalframenumber}
-\setbeamertemplate{bibliography item}[triangle]
 \metroset{block=fill}
+\setbeamertemplate{bibliography item}[triangle]
+\setbeamertemplate{frame numbering}{\insertframenumber\,/\,\inserttotalframenumber}
+\setbeamertemplate{section in toc}[sections numbered]
 
-% Patch the "Overfull \vbox" warning from the theme.
+% Patch warnings from the theme and the hyperref package.
 \def\titlepage{\usebeamertemplate{title page}}
-
-% Patch the "Token not allowed in a PDF string (Unicode): (hyperref)
-% removing `\translate'" warning from hyperred.
 \pdfstringdefDisableCommands{\def\translate#1{#1}}
 
 % Removing the extra-indentation of itemize/enumeration environments.
@@ -60,7 +57,7 @@
 }
 \hypersetup{%
     pdfsubject={ICCOPT2022},%
-    pdfkeywords={DFO, derivative-free, optimization, COBYQA},%
+    pdfkeywords={DFO,derivative-free,optimization,COBYQA},%
 }
 
 \begin{document}
