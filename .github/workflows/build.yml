@@ -30,7 +30,7 @@ jobs:
           pre_compile: tlmgr update --self && tlmgr update --all
 
       - name: Store artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: cobyqa.pdf
           if-no-files-found: error
