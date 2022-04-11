@@ -14,7 +14,7 @@ on:
 jobs:
   run:
     name: Generate pdf document
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
